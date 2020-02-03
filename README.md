@@ -8,3 +8,5 @@ NALR.vbs is the main file. The original credit for this script goes to Alexandre
 Change the information at the top of the script and then scroll down to the bottom and configure the SendMail function.
 
 DumpGroupMembership.ps1 will dump AD group members to a csv file and run ImportGroups.vbs to import the groups into the database. This can then be used to report on the permissions that an individual user has to the folder.
+
+WebGUI needs work but is included for completeness sake. It requires "DHTML Window Widget" by Dynamic Drive, available at: http://www.dynamicdrive.com which is free but separately licensed.
