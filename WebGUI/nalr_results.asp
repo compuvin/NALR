@@ -42,6 +42,7 @@ Function Format(vExpression, sFormat)
 	  else
 	    nExpression = replace(nExpression,"HH",right("00" & hour(vExpression),2)) '2 character hour
 	    nExpression = replace(nExpression,"H",hour(vExpression)) '1 character hour
+		if int(hour(vExpression)) = 12 then nExpression = replace(nExpression,"AM/PM","PM") '12 noon is PM while anything else in this section is AM (fixed 04/19/2019 thanks to our HR Dept.)
 		nExpression = replace(nExpression,"AM/PM","AM") 'If its not PM, its AM
 	  end if
 	  nExpression = replace(nExpression,":MM",":" & right("00" & minute(vExpression),2)) '2 character minute
@@ -82,7 +83,7 @@ Function Format(vExpression, sFormat)
 		loop
 	  end if
 	else
-      response.write "Formating issue on page. Unrecognised format: " & sFormat
+      response.write "Formating issue on page. Unrecognized format: " & sFormat
 	end if
 	
 	Format = nExpression
